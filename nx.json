@@ -52,5 +52,6 @@
       "unitTestRunner": "jest"
     }
   },
-  "defaultProject": "login-reduex-poc"
+  "defaultProject": "login-reduex-poc",
+  "nxCloudAccessToken": "MDc4MjZhNDQtZmZjOS00NDkyLTlkZmYtMDJlZTc4MzYzNjBkfHJlYWQtd3JpdGU="
 }

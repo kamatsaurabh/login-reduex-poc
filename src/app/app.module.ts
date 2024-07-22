@@ -15,8 +15,8 @@ import { LoginService } from './lib/login.service';
   imports: [
     BrowserModule,
     HttpClientModule,  
-    // StoreModule.forRoot({ auth: authReducer }),
-    // EffectsModule.forRoot([AuthEffects]),
+    StoreModule.forRoot({ auth: authReducer }),
+    EffectsModule.forRoot([AuthEffects]),
   ],
   providers: [LoginService],
   bootstrap: [AppComponent]

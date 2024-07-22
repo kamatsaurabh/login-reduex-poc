@@ -4,9 +4,7 @@ import { appRoutes } from './app.routes';
 import { provideEffects } from '@ngrx/effects';
 import { AuthEffects } from './lib/auth.effects'; // Replace with the actual path to your AuthEffects
 import { provideStore } from '@ngrx/store';
-import { reducers,metaReducers } from './reducers';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
-import { couterReducer } from './reducers/counter.reducer';
 import { authReducer } from './lib/auth.reducer';
 import { environment } from 'src/environments/environment.dev';
 import { HttpClientModule } from '@angular/common/http';

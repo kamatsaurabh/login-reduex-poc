@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
+    "start-dev": "nx serve login-reduex-poc",
     "build": "nx build",
     "test": "nx test"
   },
@@ -17,6 +18,9 @@
     "@angular/platform-browser": "~18.1.0",
     "@angular/platform-browser-dynamic": "~18.1.0",
     "@angular/router": "~18.1.0",
+    "@ngrx/effects": "^18.0.1",
+    "@ngrx/store": "^18.0.1",
+    "@ngrx/store-devtools": "^18.0.1",
     "@nx/angular": "19.5.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

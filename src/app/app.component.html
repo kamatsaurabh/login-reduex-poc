@@ -1,1 +1,8 @@
-<app-nx-welcome></app-nx-welcome> <router-outlet></router-outlet>
+<div>
+    <button (click)="login()">Login</button>
+    <div *ngIf="auth$ | async as auth">
+      <p *ngIf="auth.loading">Loading...</p>
+      <p *ngIf="auth.token">Token: {{ auth.token }}</p>
+      <p *ngIf="auth.error">Error: {{ auth.error }}</p>
+    </div>
+  </div>

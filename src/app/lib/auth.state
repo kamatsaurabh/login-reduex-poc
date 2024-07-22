@@ -1,10 +1,10 @@
-export interface AuthState {
+export interface restAuthState {
     token: any | null;
     loading: boolean;
     error: string | null;
   }
   
-  export const initialAuthState: AuthState = {
+  export const restinitialAuthState: restAuthState = {
     token: null,
     loading: false,
     error: null

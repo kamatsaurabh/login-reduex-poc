@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, exhaustMap, map } from 'rxjs/operators';
 import { of } from 'rxjs';
@@ -7,17 +7,24 @@ import * as AuthActions from './auth.actions';
 
 @Injectable()
 export class AuthEffects {
-  constructor(private actions$: Actions, private loginService: LoginService) {}
 
-  login$ = createEffect(() =>
-    this.actions$.pipe(
+  loginService = inject(LoginService);
+  actions = inject(Actions);
+
+  loginEffect = createEffect(() =>
+    this.actions.pipe(
       ofType(AuthActions.login),
-      exhaustMap(action =>
-        this.loginService.login(action.email, action.password).pipe(
-          map(response => AuthActions.loginSuccess({ token: response.token })),  // Destructure the token
-          catchError(error => of(AuthActions.loginFailure({ error: error.message })))
-        )
-      )
+      exhaustMap(({email, password}) => {
+        
+        return this.loginService.login(email, password).pipe(
+          map((response) => {
+            return AuthActions.loginSuccess({ token: response.token });
+          }),
+          catchError((err) =>
+            of(AuthActions.loginFailure({ error: err.message }))
+          )
+        );
+      })
     )
   );
 }

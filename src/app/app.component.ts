@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { AuthState } from './lib/auth.state';
-import { authReducer } from './lib/auth.reducer';
+import { authReducer, AuthState } from './lib/auth.reducer';
 import { AuthEffects } from './lib/auth.effects';
 import { login } from './lib/auth.actions';
 import { RouterModule } from '@angular/router';
@@ -14,7 +13,7 @@ import { Store, StoreModule } from '@ngrx/store';
 import { LoginService } from './lib/login.service';
 
 @Component({
-  standalone: false,
+  standalone: true,
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
